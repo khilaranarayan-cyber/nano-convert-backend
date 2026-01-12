@@ -4,7 +4,7 @@ boto3>=1.35.0
 aioboto3==11.0.0
 redis==4.6.0
 rq==1.14.0
-python-magic==0.4.27
+python-magic
 python-clamd==1.0.2
 pillow==10.1.0
 PyPDF2==3.0.1
