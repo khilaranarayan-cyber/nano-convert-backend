@@ -1,0 +1,18 @@
+# Optional Render blueprint for running web + worker
+# - Service: web (FastAPI via uvicorn) -> start: uvicorn main:app --host 0.0.0.0 --port 10000
+# - Service: worker (background) -> start: python workers/worker.py
+#
+# Place this file if you want Render to auto-detect two services. Adjust ports and commands in the Render dashboard.
+services:
+  - type: web
+    name: nano-convert-web
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+  - type: worker
+    name: nano-convert-worker
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python workers/worker.py
