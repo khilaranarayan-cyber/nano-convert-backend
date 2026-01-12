@@ -7,9 +7,10 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import tools, jobs, health
+from routes import tools, jobs, health
 from app.config import settings
-from app.services import storage, queue as queue_service
+from services import storage, queue as queue_service
+
 
 # Basic logging
 logging.basicConfig(level=logging.DEBUG if settings.debug else logging.INFO)
