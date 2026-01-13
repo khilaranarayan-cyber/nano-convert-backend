@@ -7,9 +7,10 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import tools, jobs, health
-from config import settings
-from services import storage, queue as queue_service
+
+from app.routes import tools, jobs, health
+from app.config import settings
+from app.services import storage, queue as queue_service
 
 
 
