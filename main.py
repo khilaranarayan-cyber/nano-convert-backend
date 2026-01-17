@@ -22,9 +22,10 @@ app = FastAPI(title="Nano Convert - Backend", version="1.0.0")
 
 # CORS is minimal: frontend should be configured in production through a gateway/CDN
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.cors_allow_origins,
+        CORSMiddleware,
+    allow_origins=["https://nano-convert-frontend.pages.dev", "http://localhost:3000"],
     allow_credentials=True,
+    
     allow_methods=["*"],
     allow_headers=["*"],
 )
